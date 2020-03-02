@@ -1,0 +1,137 @@
+﻿@model IEnumerable<BMS.Models.ViewModels.CRUD.UserViewModel>
+@using BMS.BLL.ExtensionMethods.Enums
+@using Webdiyer.WebControls.Mvc
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+
+    .table th, .table td {
+        text-align: center;
+        vertical-align: middle !important;
+    }
+</style>
+<div class="content-heading">
+    用户管理
+</div>
+<ol class="breadcrumb">
+    <li>用户管理</li>
+    <li class="active">用户列表</li>
+</ol>
+
+<div class="btn-tools mb-lg clearfix">
+    <form class="form-inline pull-left" action="@Url.Action("Index")" method="get">
+        <div class="form-group">
+            <input type="text" class="form-control" name="pName" value="@Request.QueryString["pName"]" id="name" placeholder="请输入的用户名称/电话号" title="请输入的用户名称或者电话号">
+        </div>
+        <button type="submit" class="btn btn-default"><em class="fa fa-search"></em></button>
+    </form>
+</div>
+
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table class="table table-bordered table-hover table-striped" style="background-color: white;">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LoginName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Age)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Gender)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.IdNumber)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Address)
+                        </th>
+                        <th>
+                            操作
+                        </th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LoginName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Age)
+                            </td>
+                            <th>
+                                @item.Gender.ToDisplayName()
+                            </th>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IdNumber)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Address)
+                            </td>
+                            <td>
+                                <a onclick="del(@item.Id)" class="btn btn-danger">删除</a>
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+            <div class="panel-footer">
+                @Html.Pager(Model, new PagerOptions { FirstPageText = "首页", PrevPageText = "上一页", LastPageText = "尾页", NextPageText = "下一页", PageIndexParameterName = "pageIndex", ContainerTagName = "ul", CssClass = "pagination pagination-sm", CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>", DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>", PagerItemTemplate = "<li>{0}</li>", Id = "bootstrappager" })
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+
+    var layer;
+    $(function () {
+        layui.use('layer', function () {
+            layer = layui.layer;
+        });
+    });
+
+    function del(id) {
+
+        layer.open({
+            title: '信息提示',
+            type: '0',
+            offset: 'auto',
+            shade: [0.8, '#393D49'],
+            icon: 0,
+            anim: 1,
+            btn: ['确定', '取消'],
+            content: '确认删除么',
+            yes: function (index) {
+                $.post(
+                    "@Url.Action("Delete")",
+                    { id: id },
+                    function (res) {
+                        if (res.status) {
+                            layer.msg(res.msg);
+                            window.location.reload();
+                        } else {
+                            layer.msg("删除失败");
+                        }
+                        layer.close(index);
+                    });
+            }
+        });
+    }
+</script>

@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "layui@0.0.1",
+      "destination": "Scripts/layui/"
+    }
+  ]
+}

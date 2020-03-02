@@ -1,0 +1,46 @@
+﻿<!-- 开始顶部导航条-->
+<nav class="navbar topnavbar">
+    <!-- 开始导航标题-->
+    <div class="navbar-header">
+        <a href="/" class="navbar-brand">
+            <div class="brand-logo">
+                <span style="font-weight: bold">图书管理系统</span>
+            </div>
+            <div class="brand-logo-collapsed">
+                <span style="font-weight: bold">BMS</span>
+            </div>
+        </a>
+    </div>
+    
+    <!-- 导航开始包装-->
+    <div class="nav-wrapper">
+        <!-- 开始左导航-->
+        <ul class="nav navbar-nav">
+            <li>
+                <!-- 按钮用于折叠左侧栏。只能在平板电脑和台式机上看到-->
+                <a href="#" data-toggle-state="aside-collapsed" class="hidden-xs">
+                    <em class="fa fa-navicon"></em>
+                </a>
+                <!-- 按钮来显示/隐藏移动工具条。仅在手机上可见.-->
+                <a href="#" data-toggle-state="aside-toggled" data-no-persist="true" class="visible-xs sidebar-toggle">
+                    <em class="fa fa-navicon"></em>
+                </a>
+            </li>
+        </ul>
+        
+        <!-- 开始正确的导航条-->
+        <ul class="nav navbar-nav navbar-right">
+            <!--启动用户状态-->
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><em class="fa fa-user"></em></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">个人信息</a></li>
+                    <li><a href="@Url.Action("LoginOut","Account")">修改密码</a></li>
+
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#" onclick="loginOut()">退出</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

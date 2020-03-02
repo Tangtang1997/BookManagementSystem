@@ -1,0 +1,77 @@
+﻿@model BMS.Models.ViewModels.CRUD.UserViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>详情页</h2>
+
+<div>
+    <h4>UserViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+            <label for="@Model.Name"></label>
+            <label name="@Model.Name"></label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoginName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoginName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PassWord)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PassWord)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("修改", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("返回列表", "Index")
+</p>
