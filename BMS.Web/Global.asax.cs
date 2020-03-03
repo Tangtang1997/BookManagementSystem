@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using BMS.Migatior.AutoMapper;
 using BMS.Web.Startup;
 
 namespace BMS.Web
@@ -20,6 +21,9 @@ namespace BMS.Web
 
             //程序启动时开始注册
             AutoFacBootstrap.Register();
+
+            
         }
+
     }
 }

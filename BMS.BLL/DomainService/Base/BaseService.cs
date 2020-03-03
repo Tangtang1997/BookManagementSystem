@@ -19,8 +19,8 @@ namespace BMS.BLL.DomainService.Base
 
         #region 添加
 
-        protected bool Add(TEntity entity) => CurrentRepository.Insert(entity) == 1;
-        protected async Task<bool> AddAsync(TEntity entity) => await CurrentRepository.InsertAsync(entity) == 1;
+        protected bool AddEntity(TEntity entity) => CurrentRepository.Insert(entity) == 1;
+        protected async Task<bool> AddEntityAsync(TEntity entity) => await CurrentRepository.InsertAsync(entity) == 1;
 
         protected bool AddList(List<TEntity> entities) =>
             CurrentRepository.InsertCollection(entities) == entities.Count;
@@ -37,38 +37,38 @@ namespace BMS.BLL.DomainService.Base
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        protected bool Delete(TKey key)
+        protected bool DeleteEntity(TKey key)
         {
             var model = CurrentRepository.FindById(key);
 
             return CurrentRepository.Delete(model) == 1;
         }
 
-        protected async Task<bool> DeleteAsync(TKey key)
+        protected async Task<bool> DeleteEntityAsync(TKey key)
         {
             var model = await CurrentRepository.FindByIdAsync(key);
 
             return await CurrentRepository.DeleteAsync(model) == 1;
         }
 
-        protected bool Delete(TEntity entity) => CurrentRepository.Delete(entity) == 1;
-        protected async Task<bool> DeleteAsync(TEntity entity) => await CurrentRepository.DeleteAsync(entity) == 1;
+        protected bool DeleteEntity(TEntity entity) => CurrentRepository.Delete(entity) == 1;
+        protected async Task<bool> DeleteEntityAsync(TEntity entity) => await CurrentRepository.DeleteAsync(entity) == 1;
 
-        protected bool Delete(List<TEntity> entities) => CurrentRepository.DeleteCollection(entities) == entities.Count;
+        protected bool DeleteEntity(List<TEntity> entities) => CurrentRepository.DeleteCollection(entities) == entities.Count;
 
-        protected async Task<bool> DeleteAsync(List<TEntity> entities) =>
+        protected async Task<bool> DeleteEntityAsync(List<TEntity> entities) =>
             await CurrentRepository.DeleteCollectionAsync(entities) == entities.Count;
 
         #endregion
 
         #region 更新
 
-        protected bool Update(TEntity entity) => CurrentRepository.Update(entity) == 1;
-        protected async Task<bool> UpdateAsync(TEntity entity) => await CurrentRepository.UpdateAsync(entity) == 1;
+        protected bool UpdateEntity(TEntity entity) => CurrentRepository.Update(entity) == 1;
+        protected async Task<bool> UpdateEntityAsync(TEntity entity) => await CurrentRepository.UpdateAsync(entity) == 1;
 
-        protected bool Update(List<TEntity> entities) => CurrentRepository.UpdateCollection(entities) == entities.Count;
+        protected bool UpdateEntity(List<TEntity> entities) => CurrentRepository.UpdateCollection(entities) == entities.Count;
 
-        protected async Task<bool> UpdateAsync(List<TEntity> entities) =>
+        protected async Task<bool> UpdateEntityAsync(List<TEntity> entities) =>
             await CurrentRepository.UpdateCollectionAsync(entities) == entities.Count;
 
         #endregion

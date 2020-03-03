@@ -1,9 +1,9 @@
 ﻿using System.Web.Mvc;
 
-namespace BMS.Tools.ExtensionMethods.Html
+namespace BMS.Migatior.ExtensionMethods.Html
 {
     public static class HtmlHelperExtensions
-    { 
+    {  
         public static string IsActive(this HtmlHelper html, string controller = null, string action = null)
         {
             const string activeClass = "active"; 

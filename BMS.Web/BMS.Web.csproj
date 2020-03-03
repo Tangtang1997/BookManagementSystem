@@ -52,6 +52,9 @@
     <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="ef">
       <HintPath>..\packages\Microsoft.EntityFrameworkCore.Tools.3.1.0\tools\netcoreapp2.0\any\ef.dll</HintPath>
     </Reference>
@@ -396,7 +399,6 @@
     <Content Include="Scripts\app\modules\utils.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="libman.json" />
     <Content Include="Scripts\app\modules\layui\font\iconfont.eot" />
     <Content Include="Scripts\app\modules\layui\font\iconfont.ttf" />
     <Content Include="Scripts\app\modules\layui\font\iconfont.woff" />
@@ -451,6 +453,10 @@
     <ProjectReference Include="..\BMS.DAL\BMS.DAL.csproj">
       <Project>{1442EDF6-ABD7-4DF9-87A7-342FE31BFB26}</Project>
       <Name>BMS.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BMS.Migatior\BMS.Migatior.csproj">
+      <Project>{0b6facbf-f373-41f3-b993-d3519145e823}</Project>
+      <Name>BMS.Migatior</Name>
     </ProjectReference>
     <ProjectReference Include="..\BMS.Models\BMS.Models.csproj">
       <Project>{2B3E2466-783E-415F-95AB-8AC2828D9A93}</Project>

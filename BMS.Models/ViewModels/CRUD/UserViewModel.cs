@@ -54,7 +54,7 @@ namespace BMS.Models.ViewModels.CRUD
 
         [Display(Name="性别")]
         [Required(ErrorMessage ="性别不能为空")]
-        public EnumGender Gender { get; set; }
+        public string Gender { get; set; } 
 
     }
 }

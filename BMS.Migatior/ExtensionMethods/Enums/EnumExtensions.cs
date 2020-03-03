@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
-namespace BMS.Tools.ExtensionMethods.Enums
+namespace BMS.Migatior.ExtensionMethods.Enums
 {
     /// <summary>
     /// 枚举扩展类

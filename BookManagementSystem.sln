@@ -11,7 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BMS.DAL", "BMS.DAL\BMS.DAL.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BMS.Models", "BMS.Models\BMS.Models.csproj", "{2B3E2466-783E-415F-95AB-8AC2828D9A93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BMS.Tools", "BMS.Tools\BMS.Tools.csproj", "{D01BF5CF-7A3E-4059-AD5D-C699A689C982}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{089F672E-7138-4329-ACEF-AF416B39683F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BMS.Migatior", "BMS.Migatior\BMS.Migatior.csproj", "{0B6FACBF-F373-41F3-B993-D3519145E823}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,13 +37,16 @@ Global
 		{2B3E2466-783E-415F-95AB-8AC2828D9A93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B3E2466-783E-415F-95AB-8AC2828D9A93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B3E2466-783E-415F-95AB-8AC2828D9A93}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D01BF5CF-7A3E-4059-AD5D-C699A689C982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D01BF5CF-7A3E-4059-AD5D-C699A689C982}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D01BF5CF-7A3E-4059-AD5D-C699A689C982}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D01BF5CF-7A3E-4059-AD5D-C699A689C982}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B6FACBF-F373-41F3-B993-D3519145E823}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B6FACBF-F373-41F3-B993-D3519145E823}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B6FACBF-F373-41F3-B993-D3519145E823}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B6FACBF-F373-41F3-B993-D3519145E823}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0B6FACBF-F373-41F3-B993-D3519145E823} = {089F672E-7138-4329-ACEF-AF416B39683F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {457AFBDC-6FF5-4A46-9894-C19311E9F0C5}

@@ -2,7 +2,10 @@
 using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
+using AutoMapper;
+using AutoMapper.Configuration;
 using BMS.DAL.EntityFrameworkCore;
+using BMS.Migatior.AutoMapper;
 
 namespace BMS.Web.Startup
 {
@@ -56,6 +59,20 @@ namespace BMS.Web.Startup
             builder.RegisterTypes(serviceAssembly.GetTypes())
                    .Where(a => a.Name.Contains("Service"))
                    .AsImplementedInterfaces();
+
+            //将AutoMapper配置添加到容器中
+            builder.Register(
+                    c => new MapperConfiguration(cfg =>
+                    {
+                        cfg.AddProfile(new EntityToViewModelProfile());
+                        cfg.AddProfile(new ViewModelToEntityProfile());
+                    }))
+                   .AsSelf()
+                   .SingleInstance();
+            builder.Register(c => c.Resolve<MapperConfiguration>().CreateMapper(c.Resolve))
+                   .As<IMapper>()
+                   .InstancePerLifetimeScope();
+
         }
 
     }
