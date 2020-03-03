@@ -12,7 +12,7 @@ namespace BMS.BLL.DomainService.Account
             : base(repository)
         {
         }
-
+         
         public async Task<LoginOutput> IsLoginAsync(LoginInput loginInput)
         {
             var user = await FindAsync(x => x.LoginName == loginInput.LoginName && x.PassWord == loginInput.PassWord);
