@@ -1,8 +1,7 @@
-# BookManagementSystem
-## 毕业设计：    图书管理系统 
-<p>目标框架.Net Framework 4.6.1</P>
-<p>数据库SqlServer 2017</p>  
-<p>依赖注入Autofac</p>
-<p>Entity FrameworkCore</p>
-<p>AutoMapper</p>    
-<p>刚开始做,一点点完善ing……</>
+# graduation project     Book Management System
+<p>Target Framework: .Net Framework 4.6.1</P>
+<p>database: SqlServer 2017</p>  
+<p>dependency injection: Autofac</p>
+<p>ORM: Entity FrameworkCore</p>
+<p>Model Mapping: AutoMapper</p>    
+<p>I just started. I'm working on it a little bit</>
